@@ -173,7 +173,7 @@ public class PersonaDAO {
 		connect();
 		
 		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
-		statement.setString(1, persona.getCedula());
+		statement.setInt(1, persona.getTipo());
 		
 		boolean rowDeleted = statement.executeUpdate() > 0;
 		statement.close();

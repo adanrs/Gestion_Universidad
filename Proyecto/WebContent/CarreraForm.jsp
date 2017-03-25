@@ -3,6 +3,9 @@
         <div class="well">
 	<center>
 		<h1>Carrera</h1>
+                 <h2>
+        	<a href="listCarrera" class="btn btn-lg btn-primary sweet-10" >Registro de Carreras</a>
+                </h2>
 
 	</center>
     <div align="center">
@@ -12,14 +15,14 @@
         <c:if test="${curso == null}">
 			<form action="insertCarrera" method="post">
         </c:if>
-        <table border="1" cellpadding="5">
+        <table class='table borderless'>
             <caption>
             	<h2>
             		<c:if test="${carrera != null}">
-            			Editar carrera
+            			Editar Carrera
             		</c:if>
             		<c:if test="${carrera == null}">
-            			Agregar carrera
+            			Agregar Carrera
             		</c:if>
             	</h2>
             </caption>
@@ -51,7 +54,7 @@
            
             <tr>
             	<td colspan="2" align="center">
-            		<input type="submit" value="Save" />
+            		<input class="btn btn-lg btn-primary sweet-10" type="submit" value="Guardar" />
             	</td>
             </tr>
         </table>

@@ -1,7 +1,7 @@
 <%@ include file="Menu.jsp" %>
 <body>
     <center>
-		<h1>Lista Ciclos</h1>
+		<h1>Ciclo</h1>
         <h2>
         	<a href="newCiclo" class="btn btn-lg btn-primary sweet-10" >Nuevo Ciclo</a>
         </h2>
@@ -10,7 +10,7 @@
     <div class="well">
 
         <table class="table table-condensed">
-            <caption><h2># De Ciclos</h2></caption>
+            <caption><h2>Lista de Ciclos</h2></caption>
             <tr>
                 <th>ID</th>
                 <th>Año</th>

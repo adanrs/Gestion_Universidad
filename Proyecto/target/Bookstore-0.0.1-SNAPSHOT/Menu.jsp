@@ -104,6 +104,8 @@
     <div class="row">
         <div class="col-sm-3 col-md-3">
             <div class="panel-group" id="accordion">
+                
+                
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -130,6 +132,8 @@
                         </div>
                     </div>
                 </div>
+                
+                
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -155,6 +159,8 @@
                         </div>
                     </div>
                 </div>
+                
+                
                 
                 
                 
@@ -185,6 +191,8 @@
                 </div>
                 
                 
+                
+                
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -210,6 +218,8 @@
                         </div>
                     </div>
                 </div>
+                
+                
                 
                 
                 

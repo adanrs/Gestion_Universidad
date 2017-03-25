@@ -20,10 +20,11 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+@WebServlet("/ControllerServlet")
 public class ControllerServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -49,7 +50,7 @@ public class ControllerServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doGet(request, response);
+       response.getOutputStream().println("Hurray !! This Servlet Works");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -83,6 +84,7 @@ public class ControllerServlet extends HttpServlet {
                 case "/listPersona":
                     listPersona(request, response);
                     break;
+                
                 case "/listPersonaProfesor":
                     listPersonaProfesor(request, response);
                     break;
@@ -92,7 +94,16 @@ public class ControllerServlet extends HttpServlet {
                 case "/newPersonaProfesor":
                     showNewFormPersonaProfesor(request, response);
                     break;  
-                    
+                case "/editPersonaProfesor":
+                    showEditFormPersonaProfesor(request, response);
+                    break;
+                case "/deletePersonaProfesor":
+                    deletePersonaProfesor(request, response);
+                    break;
+                case "/updatePersonaProfesor":
+                    updatePersonaProfesor(request, response);
+                    break;
+    
                     
                 case "/insertPersona":
                     insertPersona(request, response);
@@ -223,7 +234,7 @@ public class ControllerServlet extends HttpServlet {
                  */
                     
                 default:
-                    listBook(request, response);
+                    dashboard(request, response);
                     break;
             }
         } catch (SQLException ex) {
@@ -245,6 +256,13 @@ public class ControllerServlet extends HttpServlet {
         List<Book> listBook = bookDAO.listAllBooks();
         request.setAttribute("listBook", listBook);
         RequestDispatcher dispatcher = request.getRequestDispatcher("BookList.jsp");
+        dispatcher.forward(request, response);
+    }
+        private void dashboard(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
+       // List<Book> listBook = bookDAO.listAllBooks();
+        //request.setAttribute("listBook", listBook);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("DashBoard.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -317,7 +335,7 @@ public class ControllerServlet extends HttpServlet {
             throws SQLException, IOException, ServletException {
         List<Persona> listPersona = personaDAO.listAllPersonaProfesor();
         request.setAttribute("listPersona", listPersona);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("PersonaList.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("ProfesorList.jsp");
         dispatcher.forward(request, response);
     }
     private void insertPersona(HttpServletRequest request, HttpServletResponse response)
@@ -372,6 +390,26 @@ public class ControllerServlet extends HttpServlet {
 
     }
 
+     private void showEditFormPersonaProfesor(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, ServletException, IOException {
+        int cedula = Integer.parseInt(request.getParameter("cedula"));
+        Persona existingPersona = personaDAO.getPersona(cedula);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("ProfesorForm.jsp");
+        request.setAttribute("persona", existingPersona);
+        dispatcher.forward(request, response);
+
+    }
+    
+    private void deletePersonaProfesor(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException {
+        int id = Integer.parseInt(request.getParameter("cedula"));
+
+        Persona persona = new Persona(id);
+        personaDAO.deletePersona(persona);
+        response.sendRedirect("listProfesor");
+
+    }
+    
     private void deletePersona(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("cedula"));
@@ -399,7 +437,23 @@ public class ControllerServlet extends HttpServlet {
 
         response.sendRedirect("listBook");
     }
+private void updatePersonaProfesor(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException {
 
+        String nombre = request.getParameter("nombre");
+        String clave = request.getParameter("clave");
+        String email = request.getParameter("email");
+        int telefono = parseInt(request.getParameter("telefono"));
+        int tipo = parseInt(request.getParameter("tipo"));
+        String carrera = request.getParameter("carrera");
+        String id = request.getParameter("cedula");
+
+        Persona persona = new Persona(id, nombre, clave, email, telefono, tipo, carrera);
+        personaDAO.updatePersona(persona);
+        response.sendRedirect("listProfesor");
+
+        response.sendRedirect("listBook");
+    }
     /*
     ************************************************************************************************************************
     ************************************************************************************************************************

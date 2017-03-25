@@ -4,9 +4,7 @@
 	<center>
 		<h1>Cursos</h1>
         <h2>
-        	<a href="newCurso">Add New curso</a>
-        	&nbsp;&nbsp;&nbsp;
-        	<a href="listCurso">List All curso</a>
+        	<a href="listCurso" class="btn btn-lg btn-primary sweet-10" >Registro de Cursos</a>
         	
         </h2>
 	</center>
@@ -17,14 +15,14 @@
         <c:if test="${curso == null}">
 			<form action="insertCurso" method="post">
         </c:if>
-        <table border="1" cellpadding="5">
+        <table class='table borderless'>
             <caption>
             	<h2>
             		<c:if test="${curso != null}">
-            			Editar curso
+            			Editar Curso
             		</c:if>
             		<c:if test="${curso == null}">
-            			Agregar curso
+            			Agregar Curso
             		</c:if>
             	</h2>
             </caption>
@@ -34,52 +32,52 @@
    
                                 
                                   <tr>
-                <th><label for="exampleInputEmail1">Año</label> </th>
+                <th><label for="exampleInputEmail1">Codigo</label> </th>
                 <td><div class="form-group">
                 	<input type="text" name="codigo" size="45"
                 			value="<c:out value='${curso.codigo}' />"
-                		/></div>
+                		required/>
                 </td>
             </tr>
        <tr>
             <tr>
-                <th><label for="exampleInputEmail1">Año</label> </th>
+                <th><label for="exampleInputEmail1">Nombre</label> </th>
                 <td><div class="form-group">
                 	<input type="text" name="nombre" size="45"
                 			value="<c:out value='${curso.nombre}' />"
-                		/></div>
+                		required/>
                 </td>
             </tr>
        <tr>
-                <th><label for="exampleInputEmail1">Año</label> </th>
+                <th><label for="exampleInputEmail1">Créditos</label> </th>
                 <td><div class="form-group">
-                	<input type="text" name="creditos" size="45"
+                	<input type="number" name="creditos" size="45"
                 			value="<c:out value='${curso.creditos}' />"
-                		/></div>
+                		required/>
                 </td>
             </tr>
              <tr>
-                <th><label for="exampleInputEmail1">Año</label> </th>
+                <th><label for="exampleInputEmail1">Horas Semanales</label> </th>
                 <td><div class="form-group">
-                	<input type="text" name="h_semanales" size="45"
+                	<input type="number" name="h_semanales" size="45"
                 			value="<c:out value='${curso.hsemanales}' />"
-                		/></div>
+                		required/>
                 </td>
             </tr>
              <tr>
-                <th><label for="exampleInputEmail1">Año</label></th>
+                <th><label for="exampleInputEmail1">Carrera</label></th>
                 <td><div class="form-group">
                 	<input type="text" name="cod_carrera" size="45"
                 			value="<c:out value='${curso.carrera}' />"
-                		/></div>
+                		required/>
                 </td>
             </tr>
             <tr>
-                <th><label for="exampleInputEmail1">Año</label> </th>
+                <th><label for="exampleInputEmail1">Ciclo</label> </th>
                 <td><div class="form-group">
-                	<input type="text" name="num_ciclo" size="45"
+                	<input type="number" name="num_ciclo" size="45"
                 			value="<c:out value='${persona.num_ciclo}' />"
-                		/></div>
+                		required/>
                 </td>
 
       
@@ -88,7 +86,7 @@
            
             <tr>
             	<td colspan="2" align="center">
-            		<input type="submit" value="Save" />
+            		<input class="btn btn-lg btn-primary sweet-10" type="submit" value="Guardar" />
             	</td>
             </tr>
         </table>

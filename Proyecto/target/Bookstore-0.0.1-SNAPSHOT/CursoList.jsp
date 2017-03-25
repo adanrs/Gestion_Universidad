@@ -1,7 +1,7 @@
 <%@ include file="Menu.jsp" %>
 <body>
 	<center>
-		<h1>Lista Cursos</h1>
+		<h1>Lista de Cursos</h1>
         <h2>
         	<a href="newCurso" class="btn btn-lg btn-primary sweet-10" >Agregar Curso</a>
 
@@ -12,7 +12,7 @@
     <div align="center">
            <div class="container">
         <table class="table table-condensed">
-            <caption><h2>List of Curso</h2></caption>
+            <caption><h2>Lista de Cursos</h2></caption>
             <tr>
                 <th>Codigo</th>
                 <th>Nombre</th>
@@ -34,9 +34,9 @@
                     
                     <td><c:out value="${curso.num_ciclo}" /></td>
                     <td>
-                    	<a href="editCurso?codigo=<c:out value='${curso.codigo}' />">Edit</a>
+                    	<a href="editCurso?codigo=<c:out value='${curso.codigo}' />" class="btn btn-lg btn-warning sweet-13" >Editar</a>
                     	&nbsp;&nbsp;&nbsp;&nbsp;
-                    	<a href="editCurso?codigo=<c:out value='${curso.codigo}' />">Delete</a>                    	
+                    	<a href="deleteCurso?codigo=<c:out value='${curso.codigo}' />" class="btn btn-lg btn-danger sweet-14");">Eliminar</a>                    	
                     </td>
                 </tr>
             </c:forEach>
