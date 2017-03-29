@@ -1,8 +1,7 @@
 /*
-Diseño y programación de plataformas Móviles
-Laboratorio #1-2 – Back-End (Sistema de Gestión Académica)
-Adán Rivera Sanchez
-Sergio Arguedas Quesada
+ADAN RIVERA SANCHEZ
+SERGIO ARGUEDAS QUESADA
+Laboratorio #1-2 â€“ Back-End (Sistema de GestiÃ³n AcadÃ©mica)
  */
 package Modelo;
 
@@ -16,10 +15,10 @@ public class Carrera {
         this.codigo = codigo;
 
     }
-	
-	public Carrera(String cod) {
+
+    public Carrera(String cod) {
         nombre = "";
-        codigo =  cod;
+        codigo = cod;
 
     }
 

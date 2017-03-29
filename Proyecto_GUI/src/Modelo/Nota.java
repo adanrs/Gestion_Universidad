@@ -1,9 +1,3 @@
-/*
-Diseño y programación de plataformas Móviles
-Laboratorio #1-2 – Back-End (Sistema de Gestión Académica)
-Adán Rivera Sanchez
-Sergio Arguedas Quesada
- */
 package Modelo;
 
 public class Nota {
@@ -29,8 +23,8 @@ public class Nota {
         this.grupo = 0;
         this.condicion = "";
     }
-	
-	public Nota(String est) {
+
+    public Nota(String est) {
         this.NOTA = 0;
         this.CURSO = "";
         this.ESTUDIANTE = est;

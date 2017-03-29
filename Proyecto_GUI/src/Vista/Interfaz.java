@@ -1,3 +1,8 @@
+/*
+ADAN RIVERA SANCHEZ
+SERGIO ARGUEDAS QUESADA
+Laboratorio #1-2 – Back-End (Sistema de Gestión Académica)
+ */
 package Vista;
 
 import java.util.Scanner;
@@ -17,16 +22,16 @@ public class Interfaz {
     public void BienvInter(int t) {
         switch (t) {
             case 1:
-                System.out.println("Area de adinistrador");
+                System.out.println("Menú de Administrador");
                 break;
             case 2:
-                System.out.println("Area de Matriculador");
+                System.out.println("Menú de Matriculador");
                 break;
             case 3:
-                System.out.println("Area de Profesor");
+                System.out.println("Menú de Profesor");
                 break;
             case 4:
-                System.out.println("Area de Alumno");
+                System.out.println("Menú de Estudiante");
                 break;
         }
     }
@@ -44,8 +49,8 @@ public class Interfaz {
     }
 
     public void init() {
-        System.out.println("Bienvenido al programa de gestion academica");
-        System.out.println("---------LOGIN---------");
+        System.out.println("GESTIÓN ACADÉMICA - ADAN - SERGIO");
+        System.out.println("---------INICIAR SESIÓN---------");
         String usr = solicitaUsr();
         String pass = solicitaPass();
         int tipo = ctrl.verificaUsuario(usr, pass);
@@ -92,19 +97,19 @@ public class Interfaz {
     }
 
     public String solicitaUsr() {
-        System.out.println("Introdusca Usuario: ");
+        System.out.println("Usuario: ");
         String pass = "";
         Scanner entradaEscaner = new Scanner(System.in);
-        pass = entradaEscaner.nextLine(); //Invocamos un método sobre un objeto Scanner
+        pass = entradaEscaner.nextLine();
         return pass;
 
     }
 
     public String solicitaPass() {
-        System.out.println("digite la contraseña:");
+        System.out.println("contraseña:");
         String pass = "";
         Scanner entradaEscaner = new Scanner(System.in);
-        pass = entradaEscaner.nextLine(); //Invocamos un método sobre un objeto Scanner
+        pass = entradaEscaner.nextLine();
         return pass;
     }
 
@@ -487,7 +492,7 @@ public class Interfaz {
         if (ctrl.existeEst(ced)) {
             System.out.println("Estudiante ya existe, Error");
         } else {
-            ctrl.agregarAlumno(SolicitaNombres(), ced, SolicitaFec_Nac(), SolicitaTelefono(), SolicitaEmail(), solicitaPass(), SolicitaCodCarrera());
+            ctrl.agregarEstudiante(SolicitaNombres(), ced, SolicitaFec_Nac(), SolicitaTelefono(), SolicitaEmail(), solicitaPass(), SolicitaCodCarrera());
         }
 
     }

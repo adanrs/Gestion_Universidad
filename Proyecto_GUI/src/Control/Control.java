@@ -1,13 +1,18 @@
+/*
+ADAN RIVERA SANCHEZ
+SERGIO ARGUEDAS QUESADA
+Laboratorio #1-2 – Back-End (Sistema de Gestión Académica)
+ */
 package Control;
 
-import AccesoDatos.AccesoDB;
+import AccesoDatos.DBControler;
 import Modelo.*;
 
 public class Control {
 
     public Control() {
         this.user = new Persona(0);
-        this.accesoD = new AccesoDB();
+        this.accesoD = new DBControler();
 
     }
 
@@ -41,13 +46,12 @@ public class Control {
     public void ActualizarCarrera(Carrera a) {
         accesoD.Actualiza(a);
     }
-    
-    public boolean existeCarrera(String cod)
-    {
-        Carrera c= new Carrera();
+
+    public boolean existeCarrera(String cod) {
+        Carrera c = new Carrera();
         accesoD.Buscar(c, cod);
-        return true ? c.getCodigo()!="":false;
-       
+        return true ? c.getCodigo() != "" : false;
+
     }
 //</editor-fold>
 
@@ -77,12 +81,11 @@ public class Control {
     public void ActualizarCurso(Curso c) {
         accesoD.Actualiza(c);
     }
-    
-    public boolean existeCur(String cog)
-    {
-        Curso c= new Curso();
+
+    public boolean existeCur(String cog) {
+        Curso c = new Curso();
         accesoD.BuscarCursoCod(c, cog);
-        return true ? c.getCodigo()!="": false;
+        return true ? c.getCodigo() != "" : false;
     }
     //</editor-fold>
 
@@ -91,18 +94,17 @@ public class Control {
         Profesor p = new Profesor(telefono, email, nombre, cedula, clave);
         agregarP(p);
     }
-    
-    public boolean existePro(String cod)
-    {
-        Profesor p= new Profesor();
+
+    public boolean existePro(String cod) {
+        Profesor p = new Profesor();
         accesoD.BuscarPrfId(p, cod);
-        return true ? p.getCedula()!="":false;
+        return true ? p.getCedula() != "" : false;
     }
 
 //</editor-fold>
 //<editor-fold desc="Metodos de Persona">
-    public void agregarAlumno(String nombre, String cedula, String Fec_Nac, int telefono, String email, String clave,String codCarr) {
-        Alumno p = new Alumno(telefono, email, nombre, cedula, Fec_Nac, clave,codCarr);
+    public void agregarEstudiante(String nombre, String cedula, String Fec_Nac, int telefono, String email, String clave, String codCarr) {
+        Alumno p = new Alumno(telefono, email, nombre, cedula, Fec_Nac, clave, codCarr);
         accesoD.agrega(p);
     }
 
@@ -159,30 +161,24 @@ public class Control {
     public void actualizaP(Persona p) {
         accesoD.Actualiza(p);
     }
-    
-    public boolean existeEst(String cod)
-    {
-        Persona e= new Persona(4);
+
+    public boolean existeEst(String cod) {
+        Persona e = new Persona(4);
         accesoD.BuscarEStId(e, cod);
-        return true?e.getCedula()!="":false;
+        return true ? e.getCedula() != "" : false;
     }
-    
-      public boolean existeAdmi(String cod)
-    {
-        Persona e= new Persona(1);
+
+    public boolean existeAdmi(String cod) {
+        Persona e = new Persona(1);
         accesoD.BuscarAdmId(e, cod);
-        return true?e.getCedula()!="":false;
+        return true ? e.getCedula() != "" : false;
     }
-      
-        public boolean existeMat(String cod)
-    {
-        Persona e= new Persona(2);
+
+    public boolean existeMat(String cod) {
+        Persona e = new Persona(2);
         accesoD.BuscarMtr(e, cod);
-        return true?e.getCedula()!="":false;
+        return true ? e.getCedula() != "" : false;
     }
-    
-    
-    
 
 //</editor-fold>
     public void ofertaAcd(String Carrera, int ciclo, Lista cursos) {
@@ -237,7 +233,7 @@ public class Control {
 
 //<editor-fold desc="Metodos de Ciclo">
     public void agregarCiclo(int anno, int nciclo, String Finicio, String Ffinal) {
-        String id = String.valueOf(anno)+ "-"+ String.valueOf(nciclo);
+        String id = String.valueOf(anno) + "-" + String.valueOf(nciclo);
         Ciclo p = new Ciclo(id, anno, nciclo, Finicio, Ffinal);
         accesoD.agrega(p);
     }
@@ -249,16 +245,16 @@ public class Control {
     public void actualizar(Ciclo c, String id) {
         accesoD.Actualiza(c, id);
     }
-    
-    public boolean existeCiclo(String cod)
-    {
-        Ciclo c= new Ciclo();
+
+    public boolean existeCiclo(String cod) {
+        Ciclo c = new Ciclo();
         accesoD.Buscar(c, cod);
-        return true? c.getId()!="":false;
+        return true ? c.getId() != "" : false;
     }
+
     //</editor-fold>
 //<editor-fold desc="Metodos de grupo">
-    public void agregarGrupo( int numero, String horario, String profesor, String curso) {
+    public void agregarGrupo(int numero, String horario, String profesor, String curso) {
         String id = curso + '-' + String.valueOf(numero);
 
         Grupo p = new Grupo(id, numero, horario, profesor, curso);
@@ -269,29 +265,27 @@ public class Control {
     public void Bcgrupo(String id_g, int ngrp, Grupo p) {
         accesoD.Buscar(p, id_g, ngrp);
     }
-    
-    public void Buscar(Grupo g,String cod)
-    {
+
+    public void Buscar(Grupo g, String cod) {
         accesoD.Buscar(g, cod);
     }
-    
-    public void cursoNCarrera(Curso a, String CArrare, String codcur){
+
+    public void cursoNCarrera(Curso a, String CArrare, String codcur) {
         accesoD.BuscarCursoCar2(a, CArrare, codcur);
     }
-    
-    public void actualizar(Grupo g)
-    {
+
+    public void actualizar(Grupo g) {
         accesoD.Actualiza(g);
     }
-    
-    public boolean existeGrupo(String cod)
-    {
-        Grupo g= new Grupo();
+
+    public boolean existeGrupo(String cod) {
+        Grupo g = new Grupo();
         accesoD.Buscar(g, cod);
-        return true? g.getId()!="":false;
+        return true ? g.getId() != "" : false;
     }
+
     //</editor-fold>
-    public boolean MAtricula(String cod, Alumno a){
+    public boolean MAtricula(String cod, Alumno a) {
 //        Curso c = new Curso();
 //        accesoD.CMatri(c, a.getCarrera(), cod);
 //        if(!c.getCodigo().isEmpty())
@@ -303,35 +297,30 @@ public class Control {
         return false;
     }
 
-     
-    public boolean DesMAtricula(String cod, Alumno a){
-        if(!accesoD.pasoCurso(a.getCedula(), cod).isEmpty()){
-                accesoD.Desmatricula(a.getCedula(),cod);          
-                return true;
-           }       
+    public boolean DesMAtricula(String cod, Alumno a) {
+        if (!accesoD.pasoCurso(a.getCedula(), cod).isEmpty()) {
+            accesoD.Desmatricula(a.getCedula(), cod);
+            return true;
+        }
         return false;
     }
-    
-    public void desmatricula(String ced, String cur)
-    {
-        accesoD.Desmatricula(ced ,cur); 
+
+    public void desmatricula(String ced, String cur) {
+        accesoD.Desmatricula(ced, cur);
     }
-    
-   
-    public void Matricular(Nota n)
-    {
+
+    public void Matricular(Nota n) {
         accesoD.matricula(n);
     }
-    
-    public void cursado(String est,String cur,Nota n)
-    {
+
+    public void cursado(String est, String cur, Nota n) {
         accesoD.condicion(est, cur, n);
     }
-    public void encurso(String est,String cur,Nota n)
-    {
+
+    public void encurso(String est, String cur, Nota n) {
         accesoD.Cursoencurso(est, cur, n);
     }
-    
+
     private Persona user;
-    private AccesoDB accesoD;
+    private DBControler accesoD;
 }
