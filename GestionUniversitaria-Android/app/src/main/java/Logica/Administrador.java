@@ -2,7 +2,7 @@
 package Logica;
 
 import java.io.Serializable;
-
+//Adan
 
 public class Administrador extends Persona implements Serializable{
 
