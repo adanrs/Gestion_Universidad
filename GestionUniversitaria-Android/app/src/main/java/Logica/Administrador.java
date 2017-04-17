@@ -3,7 +3,7 @@ package Logica;
 
 import java.io.Serializable;
 //Adan
-
+//Sergio
 public class Administrador extends Persona implements Serializable{
 
     private Usuario usuario;
