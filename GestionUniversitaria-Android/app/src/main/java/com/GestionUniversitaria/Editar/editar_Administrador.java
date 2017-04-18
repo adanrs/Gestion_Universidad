@@ -15,10 +15,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.GestionUniversitaria.R;
-import com.GestionUniversitaria.Variables;
+import com.GestionUniversitaria.Parametros;
 import com.GestionUniversitaria.Async;
 
-import Logica.Administrador;
+import Modelo.Administrador;
 
 
 /**
@@ -44,7 +44,7 @@ public class editar_Administrador extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_editar_administrador, container, false);
+        return inflater.inflate(R.layout.editar_administrador, container, false);
     }
 
 
@@ -125,7 +125,7 @@ public class editar_Administrador extends Fragment {
                             focusView.requestFocus();
                         } else {
 
-                            String urlBase = Variables.getURLBase();
+                            String urlBase = Parametros.getURLBase();
                             urlRequest = urlBase + "action=EditarAdministrador"+"&cedula="+ced+"&nombre="+nom+"&telefono="+tel+"&email="+ema+"&password="+con;
                             new Async(vi.getContext(),getFragmentManager(),urlRequest).execute();
                         }

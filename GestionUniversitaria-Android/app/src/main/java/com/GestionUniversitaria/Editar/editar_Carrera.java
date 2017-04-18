@@ -18,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.GestionUniversitaria.R;
-import com.GestionUniversitaria.Variables;
+import com.GestionUniversitaria.Parametros;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +30,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import Logica.Carrera;
+import Modelo.Carrera;
 
 
 /**
@@ -57,7 +57,7 @@ public class editar_Carrera extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_editar_carrera, container, false);
+        return inflater.inflate(R.layout.editar_carrera, container, false);
     }
 
 
@@ -119,7 +119,7 @@ public class editar_Carrera extends Fragment {
                             focusView.requestFocus();
                         } else {
 
-                            String urlBase = Variables.getURLBase();
+                            String urlBase = Parametros.getURLBase();
                             urlRequest = urlBase + "action=EditarCarrera"+"&codigo="+cod+"&nombre="+nom+"&titulo="+tit;
                             new EditarCarreraTask(vi.getContext()).execute();
                         }

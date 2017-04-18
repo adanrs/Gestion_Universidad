@@ -16,8 +16,8 @@ import com.GestionUniversitaria.R;
 
 import java.util.ArrayList;
 
-import Logica.Carrera;
-import Logica.Estudiante;
+import Modelo.Carrera;
+import Modelo.Estudiante;
 
 
 public class conector_Estudiante extends RecyclerView.Adapter<conector_Estudiante.ViewHolder>{
@@ -110,7 +110,7 @@ public class conector_Estudiante extends RecyclerView.Adapter<conector_Estudiant
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View contactView = inflater.inflate(R.layout.fila_estudiante, parent, false);
+        View contactView = inflater.inflate(R.layout.lista_estudiantes, parent, false);
 
         conector_Estudiante.ViewHolder viewHolder = new conector_Estudiante.ViewHolder(context,contactView);
         return viewHolder;

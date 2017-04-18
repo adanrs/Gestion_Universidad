@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.GestionUniversitaria.R;
-import com.GestionUniversitaria.Variables;
+import com.GestionUniversitaria.Parametros;
 import com.GestionUniversitaria.Async;
 
 
@@ -35,7 +35,7 @@ public class agregar_Administrador extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_agregar_administrador, container, false);
+        return inflater.inflate(R.layout.agregar_administrador, container, false);
     }
 
     @Override
@@ -111,7 +111,7 @@ public class agregar_Administrador extends Fragment {
                         public void onClick(DialogInterface dialog, int whichButton) {
 
 
-                            String urlBase = Variables.getURLBase();
+                            String urlBase = Parametros.getURLBase();
                             urlRequest = urlBase + "action=AgregarAdministrador" + "&cedula=" + ced + "&nombre=" + nom + "&telefono=" + tel + "&email=" + ema + "&password=" + con;
                             new Async(vi.getContext(), getFragmentManager(), urlRequest).execute();
 

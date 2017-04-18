@@ -5,11 +5,11 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class Variables extends Application{
+public class Parametros extends Application{
 
-//Conexion al servlet Back End
 
-    private static final String URLBase = "http://192.168.2.175:8084/UniversidadBackend/AndroidServlet?"; // Cambiarla segun donde se ejecute el backend
+
+    private static final String URLBase = "http://192.168.1.18:8080/GestionUniversitaria-BE/AndroidServlet?"; // Cambiarla segun donde se ejecute el backend
 
 
     public static String getURLBase() {

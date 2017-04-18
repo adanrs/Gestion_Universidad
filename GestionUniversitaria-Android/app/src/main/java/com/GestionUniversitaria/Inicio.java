@@ -31,7 +31,7 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        //setear el fragment inicial
+
         MainFragment fragment=new MainFragment();
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frament_container, fragment);
@@ -81,7 +81,7 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
             Intent intent = new Intent(Inicio.this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             Inicio.this.startActivity(intent);
-            Variables.clearUser(this);
+            Parametros.clearUser(this);
             finish();
             return true;
         }

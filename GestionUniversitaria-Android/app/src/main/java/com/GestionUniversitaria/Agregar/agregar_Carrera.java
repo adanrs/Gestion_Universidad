@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.GestionUniversitaria.R;
-import com.GestionUniversitaria.Variables;
+import com.GestionUniversitaria.Parametros;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,7 +47,7 @@ public class agregar_Carrera extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_agregar_carrera, container, false);
+        return inflater.inflate(R.layout.agregar_carrera, container, false);
     }
 
     @Override
@@ -106,7 +106,7 @@ public class agregar_Carrera extends Fragment {
                             focusView.requestFocus();
                         } else {
 
-                            String urlBase = Variables.getURLBase();
+                            String urlBase = Parametros.getURLBase();
                             urlRequest = urlBase + "action=AgregarCarrera"+"&codigo="+cod+"&nombre="+nom+"&titulo="+tit;
                             new AgregarCarreraTask(vi.getContext()).execute();
                         }

@@ -24,7 +24,7 @@ import com.GestionUniversitaria.Conector.conector_Estudiante;
 import com.GestionUniversitaria.Agregar.agregar_Estudiante;
 import com.GestionUniversitaria.Inicio;
 import com.GestionUniversitaria.R;
-import com.GestionUniversitaria.Variables;
+import com.GestionUniversitaria.Parametros;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,13 +41,13 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import Logica.Carrera;
-import Logica.Estudiante;
-import Logica.Usuario;
+import Modelo.Carrera;
+import Modelo.Estudiante;
+import Modelo.Usuario;
 
 public class estudiantes extends Fragment{
     String urlRequest;
-    static String urlBase = Variables.getURLBase();
+    static String urlBase = Parametros.getURLBase();
     ArrayList<String> result = new ArrayList<>();
     String mCedula=null;
     String mNombre=null;
@@ -77,7 +77,7 @@ public class estudiantes extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_estudiantes, container, false);
+        View v=inflater.inflate(R.layout.estudiantes, container, false);
 
 
         return v;

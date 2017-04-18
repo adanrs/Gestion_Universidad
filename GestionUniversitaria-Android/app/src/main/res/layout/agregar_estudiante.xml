@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.GestionUniversitaria.Agregar.agregar_Matriculador">
+    tools:context="com.GestionUniversitaria.Editar.editar_Estudiante">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,17 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
-                android:id="@+id/cedulawidgetMatriculador"
+                android:id="@+id/cedulaWidgetEst"
                 android:layout_alignParentTop="true"
                 android:layout_toEndOf="@+id/imageView7"
                 android:layout_marginStart="21dp">
 
                 <EditText
-                    android:id="@+id/cedulaMatriculador"
+                    android:id="@+id/cedulaEstudiante"
                     android:layout_width="266dp"
                     android:layout_height="wrap_content"
                     android:hint="Cedula"
@@ -35,16 +36,18 @@
                     android:maxLength="20"/>
             </android.support.design.widget.TextInputLayout>
 
+
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/cedulawidgetMatriculador"
+                android:layout_below="@+id/cedulaWidgetEst"
                 android:layout_marginTop="20dp"
-                android:id="@+id/nombrewidgetMatriculador"
-                android:layout_alignStart="@+id/cedulawidgetMatriculador">
+                android:id="@+id/nombrewidgetEstudiante"
+                android:layout_alignStart="@+id/cedulaWidgetEst">
 
                 <EditText
-                    android:id="@+id/nombreMatriculador"
+                    android:id="@+id/nombreEstudiante"
                     android:layout_width="266dp"
                     android:layout_height="wrap_content"
                     android:hint="Nombre"
@@ -59,13 +62,13 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nombrewidgetMatriculador"
+                android:layout_below="@+id/nombrewidgetEstudiante"
                 android:layout_marginTop="20dp"
-                android:id="@+id/telefonoWidgetMat"
-                android:layout_alignStart="@+id/cedulawidgetMatriculador">
+                android:id="@+id/telefonoWidgetPro"
+                android:layout_alignStart="@+id/cedulaWidgetEst">
 
                 <EditText
-                    android:id="@+id/telefonoMatriculador"
+                    android:id="@+id/telefonoEstudiante"
                     android:layout_width="266dp"
                     android:layout_height="wrap_content"
                     android:hint="Telefono"
@@ -78,32 +81,80 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/telefonoWidgetMat"
+                android:layout_below="@+id/telefonoWidgetPro"
                 android:layout_marginTop="20dp"
-                android:id="@+id/emailWidgetMat"
-                android:layout_alignStart="@+id/cedulawidgetMatriculador">
+                android:id="@+id/emailWidgetPro"
+                android:layout_alignStart="@+id/cedulaWidgetEst">
 
                 <EditText
-                    android:id="@+id/emailMatriculador"
+                    android:id="@+id/emailEstudiante"
                     android:layout_width="266dp"
                     android:layout_height="wrap_content"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
                     android:maxLength="25"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    />
             </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/fechaNacText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Fecha Nacimiento: "
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/emailWidgetPro"
+                android:layout_alignStart="@+id/cedulaWidgetEst"
+                android:textSize="18sp"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/widgetFechaNac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/cedulaWidgetEst"
+                android:layout_below="@+id/emailWidgetPro"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:id="@+id/fechaNac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Elegir"
+                    android:textSize="18sp"
+                    android:maxLines="1"
+                    android:singleLine="true"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/carreraText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Carrera: "
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/fechaNacText"
+                android:layout_alignStart="@+id/cedulaWidgetEst"
+                android:textSize="18sp"/>
+
+            <Spinner
+                android:id="@+id/spinnerEstudiante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/fechaNacText"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/emailWidgetMat"
+                android:layout_below="@+id/carreraText"
                 android:layout_marginTop="20dp"
-                android:id="@+id/contrasenaWidgetMat"
-                android:layout_alignStart="@+id/cedulawidgetMatriculador">
+                android:id="@+id/contrasenaWidgetPro"
+                android:layout_alignStart="@+id/cedulaWidgetEst">
 
                 <EditText
-                    android:id="@+id/contrasenaMatriculador"
+                    android:id="@+id/contrasenaEstudiante"
                     android:layout_width="266dp"
                     android:layout_height="wrap_content"
                     android:hint="Contraseña"
@@ -114,43 +165,17 @@
             </android.support.design.widget.TextInputLayout>
 
 
+
             <Button
-                android:id="@+id/botonGuardarMatriculador"
+                android:id="@+id/botonGuardarEstudiante"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/contrasenaWidgetMat"
+                android:layout_below="@+id/contrasenaWidgetPro"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:layout_weight="1"
                 android:text="Guardar" />
 
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/avatar"
-                android:layout_above="@+id/telefonoWidgetMat"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="13dp"
-                android:layout_marginBottom="11dp" />
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/callanswer"
-                android:layout_above="@+id/emailWidgetMat"
-                android:layout_alignStart="@+id/imageView7"
-                android:layout_marginBottom="11dp" />
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/email"
-                android:layout_alignBottom="@+id/emailWidgetMat"
-                android:layout_alignStart="@+id/imageView8"
-                android:layout_marginBottom="14dp" />
         </RelativeLayout>
     </ScrollView>
 

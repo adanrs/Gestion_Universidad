@@ -124,34 +124,7 @@
         android:layout_weight="1"
         android:text="Guardar" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/avatar"
-        android:layout_above="@+id/telefonoWidgetPro"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginBottom="11dp" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/callanswer"
-        android:layout_above="@+id/emailWidgetPro"
-        android:layout_alignStart="@+id/imageView7"
-        android:layout_marginBottom="11dp" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/email"
-        android:layout_alignBottom="@+id/emailWidgetPro"
-        android:layout_alignStart="@+id/imageView8"
-        android:layout_marginBottom="14dp" />
-</RelativeLayout>
+        </RelativeLayout>
     </ScrollView>
 
 </RelativeLayout>

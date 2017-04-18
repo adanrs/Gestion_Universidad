@@ -16,7 +16,7 @@ import com.GestionUniversitaria.Editar.editar_Profesor;
 
 import java.util.ArrayList;
 
-import Logica.Profesor;
+import Modelo.Profesor;
 
 public class conector_Profesor extends RecyclerView.Adapter<conector_Profesor.ViewHolder>{
 
@@ -96,7 +96,7 @@ public class conector_Profesor extends RecyclerView.Adapter<conector_Profesor.Vi
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View contactView = inflater.inflate(R.layout.fila_profesor, parent, false);
+        View contactView = inflater.inflate(R.layout.lista_profesor, parent, false);
 
         conector_Profesor.ViewHolder viewHolder = new conector_Profesor.ViewHolder(context,contactView);
         return viewHolder;

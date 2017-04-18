@@ -15,10 +15,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.GestionUniversitaria.R;
-import com.GestionUniversitaria.Variables;
+import com.GestionUniversitaria.Parametros;
 import com.GestionUniversitaria.Async;
 
-import Logica.Matriculador;
+import Modelo.Matriculador;
 
 
 /**
@@ -44,7 +44,7 @@ public class editar_Matriculador extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_editar_matriculador, container, false);
+        return inflater.inflate(R.layout.editar_matriculador, container, false);
     }
 
 
@@ -125,7 +125,7 @@ public class editar_Matriculador extends Fragment {
                             focusView.requestFocus();
                         } else {
 
-                            String urlBase = Variables.getURLBase();
+                            String urlBase = Parametros.getURLBase();
                             urlRequest = urlBase + "action=EditarMatriculador"+"&cedula="+ced+"&nombre="+nom+"&telefono="+tel+"&email="+ema+"&password="+con;
                             new Async(vi.getContext(),getFragmentManager(),urlRequest).execute();
                         }

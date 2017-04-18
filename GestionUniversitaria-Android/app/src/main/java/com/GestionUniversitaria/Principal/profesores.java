@@ -24,7 +24,7 @@ import com.GestionUniversitaria.Conector.conector_Profesor;
 import com.GestionUniversitaria.Agregar.agregar_Profesor;
 import com.GestionUniversitaria.Inicio;
 import com.GestionUniversitaria.R;
-import com.GestionUniversitaria.Variables;
+import com.GestionUniversitaria.Parametros;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,8 +39,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import Logica.Profesor;
-import Logica.Usuario;
+import Modelo.Profesor;
+import Modelo.Usuario;
 
 public class profesores extends Fragment{
     String urlRequest;
@@ -73,7 +73,7 @@ public class profesores extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_profesores, container, false);
+        View v=inflater.inflate(R.layout.profesores, container, false);
 
 
         return v;
@@ -165,7 +165,7 @@ public class profesores extends Fragment{
 
 
 
-        String urlBase = Variables.getURLBase();
+        String urlBase = Parametros.getURLBase();
 
         if(mCedula==null && mNombre==null){
             urlRequest = urlBase + "action=AllProfesores";

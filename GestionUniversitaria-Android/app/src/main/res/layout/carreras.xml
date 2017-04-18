@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:clipToPadding="false"
         tools:context="com.GestionUniversitaria.Principal.carreras"
-        tools:listitem="@layout/fila_carrera"
+        tools:listitem="@layout/lista_carrera"
         android:layout_below="@+id/textViewCarreras"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true" />

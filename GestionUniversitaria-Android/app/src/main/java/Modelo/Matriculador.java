@@ -1,19 +1,19 @@
 
-package Logica;
+package Modelo;
 
 import java.io.Serializable;
-//Adan
-//Sergio
-public class Administrador extends Persona implements Serializable{
+
+
+public class Matriculador extends Persona implements Serializable{
 
     private Usuario usuario;
 
-    public Administrador(Usuario usuario, String nombre, String cedula, String telefono, String email) {
+    public Matriculador(Usuario usuario, String nombre, String cedula, String telefono, String email) {
         super(nombre, cedula, telefono, email);
         this.usuario = usuario;
     }
 
-    public Administrador() {
+    public Matriculador() {
         super(null, null, null, null);
     }
 

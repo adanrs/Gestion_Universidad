@@ -16,7 +16,7 @@ import com.GestionUniversitaria.R;
 
 import java.util.ArrayList;
 
-import Logica.Administrador;
+import Modelo.Administrador;
 
 public class conector_Administrador extends RecyclerView.Adapter<conector_Administrador.ViewHolder>{
 
@@ -96,7 +96,7 @@ public class conector_Administrador extends RecyclerView.Adapter<conector_Admini
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View contactView = inflater.inflate(R.layout.fila_administrador, parent, false);
+        View contactView = inflater.inflate(R.layout.lista_administrador, parent, false);
 
         conector_Administrador.ViewHolder viewHolder = new conector_Administrador.ViewHolder(context,contactView);
         return viewHolder;

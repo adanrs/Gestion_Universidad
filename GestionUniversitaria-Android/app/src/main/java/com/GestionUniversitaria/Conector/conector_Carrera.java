@@ -16,7 +16,7 @@ import com.GestionUniversitaria.Editar.editar_Carrera;
 
 import java.util.ArrayList;
 
-import Logica.Carrera;
+import Modelo.Carrera;
 
 
 public class conector_Carrera extends RecyclerView.Adapter<conector_Carrera.ViewHolder> {
@@ -94,7 +94,7 @@ public class conector_Carrera extends RecyclerView.Adapter<conector_Carrera.View
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View contactView = inflater.inflate(R.layout.fila_carrera, parent, false);
+        View contactView = inflater.inflate(R.layout.lista_carrera, parent, false);
 
         conector_Carrera.ViewHolder viewHolder = new conector_Carrera.ViewHolder(context,contactView);
         return viewHolder;

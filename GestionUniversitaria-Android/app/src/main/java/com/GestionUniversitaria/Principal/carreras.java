@@ -24,7 +24,7 @@ import com.GestionUniversitaria.Conector.conector_Carrera;
 import com.GestionUniversitaria.Agregar.agregar_Carrera;
 import com.GestionUniversitaria.Inicio;
 import com.GestionUniversitaria.R;
-import com.GestionUniversitaria.Variables;
+import com.GestionUniversitaria.Parametros;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,7 +38,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import Logica.Carrera;
+import Modelo.Carrera;
 
 
 public class carreras extends Fragment {
@@ -74,7 +74,7 @@ public class carreras extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_carreras, container, false);
+        View v=inflater.inflate(R.layout.carreras, container, false);
 
 
         return v;
@@ -163,7 +163,7 @@ public class carreras extends Fragment {
             }
         });
 
-        String urlBase = Variables.getURLBase();
+        String urlBase = Parametros.getURLBase();
 
         if(mcodigo==null && mnombre==null){
         urlRequest = urlBase + "action=AllCarreras";

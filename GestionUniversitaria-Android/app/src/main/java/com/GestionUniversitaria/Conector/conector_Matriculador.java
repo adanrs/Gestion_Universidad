@@ -16,7 +16,7 @@ import com.GestionUniversitaria.Editar.editar_Matriculador;
 
 import java.util.ArrayList;
 
-import Logica.Matriculador;
+import Modelo.Matriculador;
 
 
 
@@ -97,7 +97,7 @@ public class conector_Matriculador extends RecyclerView.Adapter<conector_Matricu
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View contactView = inflater.inflate(R.layout.fila_matriculador, parent, false);
+        View contactView = inflater.inflate(R.layout.lista_matriculador, parent, false);
 
         conector_Matriculador.ViewHolder viewHolder = new conector_Matriculador.ViewHolder(context,contactView);
         return viewHolder;

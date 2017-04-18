@@ -25,7 +25,7 @@ import com.GestionUniversitaria.Conector.conector_Administrador;
 import com.GestionUniversitaria.Agregar.agregar_Administrador;
 import com.GestionUniversitaria.Inicio;
 import com.GestionUniversitaria.R;
-import com.GestionUniversitaria.Variables;
+import com.GestionUniversitaria.Parametros;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,8 +40,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import Logica.Administrador;
-import Logica.Usuario;
+import Modelo.Administrador;
+import Modelo.Usuario;
 
 
 /**
@@ -78,7 +78,7 @@ public class administradores extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_administradores, container, false);
+        View v=inflater.inflate(R.layout.administradores, container, false);
 
 
         return v;
@@ -170,7 +170,7 @@ public class administradores extends Fragment{
 
 
 
-        String urlBase = Variables.getURLBase();
+        String urlBase = Parametros.getURLBase();
 
         if(mCedula==null && mNombre==null){
             urlRequest = urlBase + "action=AllAdministradores";

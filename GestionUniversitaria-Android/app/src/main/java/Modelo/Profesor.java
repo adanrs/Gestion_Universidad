@@ -1,5 +1,5 @@
 
-package Logica;
+package Modelo;
 
 import java.io.Serializable;
 

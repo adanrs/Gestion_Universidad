@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.GestionUniversitaria.Principal.estudiantes"
-        tools:listitem="@layout/fila_estudiante"
+        tools:listitem="@layout/lista_estudiantes"
         android:layout_below="@+id/textListaP" />
 
 

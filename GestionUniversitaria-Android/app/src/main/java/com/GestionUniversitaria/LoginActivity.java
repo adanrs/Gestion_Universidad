@@ -37,8 +37,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle("Login");
-        if(Variables.getUser(LoginActivity.this) != null){
-            Toast.makeText(LoginActivity.this, "Bienvenido "+Variables.getUser(LoginActivity.this), Toast.LENGTH_SHORT).show();
+        if(Parametros.getUser(LoginActivity.this) != null){
+            Toast.makeText(LoginActivity.this, "Bienvenido "+ Parametros.getUser(LoginActivity.this), Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(LoginActivity.this,Inicio.class);
             LoginActivity.this.startActivity(intent);
         }
@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
             focusView.requestFocus();
         } else {
             // perform the user login attempt.
-            String urlBase = Variables.getURLBase();
+            String urlBase = Parametros.getURLBase();
             String id = username.getText().toString();
             String pass = mpassword.getText().toString();
             urlRequest = urlBase + "action=Ingresar"+"&id="+id+"&password="+pass;
@@ -121,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
                     JSONObject data = new JSONObject(result);
                     String id = data.getString("id");
                     Toast.makeText(LoginActivity.this, id, Toast.LENGTH_LONG).show();
-                    Variables.saveUser(id,LoginActivity.this);
+                    Parametros.saveUser(id,LoginActivity.this);
 
                     int tipoUsuario = data.getInt("tipo");
                     if (tipoUsuario != 0){

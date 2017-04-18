@@ -49,7 +49,7 @@
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
         tools:context="com.GestionUniversitaria.Principal.matriculadores"
-        tools:listitem="@layout/fila_matriculador"
+        tools:listitem="@layout/lista_matriculador"
         android:layout_below="@+id/textListaP"
         android:layout_centerHorizontal="true"
         />

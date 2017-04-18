@@ -18,7 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.GestionUniversitaria.R;
-import com.GestionUniversitaria.Variables;
+import com.GestionUniversitaria.Parametros;
 import com.GestionUniversitaria.Async;
 
 import java.text.SimpleDateFormat;
@@ -26,8 +26,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
-import Logica.Carrera;
-import Logica.Estudiante;
+import Modelo.Carrera;
+import Modelo.Estudiante;
 
 
 public class editar_Estudiante extends Fragment {
@@ -54,7 +54,7 @@ public class editar_Estudiante extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_editar_estudiante, container, false);
+        return inflater.inflate(R.layout.editar_estudiante, container, false);
     }
 
 
@@ -187,7 +187,7 @@ public class editar_Estudiante extends Fragment {
                         } else {
                             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-                            String urlBase = Variables.getURLBase();
+                            String urlBase = Parametros.getURLBase();
                             urlRequest = urlBase + "action=EditarEstudiante"+"&cedula="+ced+"&nombre="+nom+"&telefono="+tel+"&email="+ema+"&password="+con+"&fechaNac="+sdf.format(estudiante.getFechaNac().getTime())+"&idCarrera="+estudiante.getCarrera().getCodigo();
                             new Async(vi.getContext(),getFragmentManager(),urlRequest).execute();
                         }
